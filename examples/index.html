@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <script type="importmap">
+    {
+      "imports": {
+        "@kanety/insert-text": "/dist/index.module.js"
+      }
+    }
+  </script>
+</head>
+<body>
+  <h1>Basic use</h1>
+  <textarea style="width: 50%; height: 5em;">sample text</textarea>
+  <div>
+    <button type="button" id="caret">Insert at caret</button>
+    <button type="button" id="first">Insert at first</button>
+    <button type="button" id="last">Insert at last</button>
+    <button type="button" id="specified">Insert at specified position</button>
+  </div>
+  <script type="module">
+    import InsertText from '@kanety/insert-text';
+    document.querySelector('#caret').addEventListener('click', (e) => {
+      InsertText.run('textarea', 'INSERTED');
+    });
+    document.querySelector('#first').addEventListener('click', (e) => {
+      InsertText.run('textarea', 'INSERTED', 'first');
+    });
+    document.querySelector('#last').addEventListener('click', (e) => {
+      InsertText.run('textarea', 'INSERTED', 'last');
+    });
+    document.querySelector('#specified').addEventListener('click', (e) => {
+      InsertText.run('textarea', 'INSERTED', 6);
+    });
+  </script>
+</body>
+</html>
