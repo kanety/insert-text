@@ -1,6 +1,6 @@
 import InsertText from 'index';
 
-describe('index', () => {
+describe('textarea', () => {
   beforeEach(() => {
     document.body.innerHTML = `
       <textarea>sample text</textarea>
